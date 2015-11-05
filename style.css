@@ -1,0 +1,26 @@
+#cadre {
+	width: 800px; height: 500px;
+	margin: 20px auto; 
+	box-shadow: 10px 5px 5px black;
+	position: relative;
+}
+
+#album {
+	position: absolute;
+	bottom: 20px; left: 70px;
+	width: 652px;
+}
+
+#album img {
+	padding-left: 10px;
+	box-shadow: 10px 5px 5px black;
+}
+
+#album img:hover {
+	box-shadow: 8px 3px 3px black;
+	cursor: pointer;
+}
+
+#album img:active {
+	box-shadow: 6px 1px 1px black;
+}
