@@ -5,6 +5,10 @@
 	position: relative;
 }
 
+.mainPicture {
+	position: absolute;
+}
+
 #album {
 	position: absolute;
 	bottom: 20px; left: 70px;
