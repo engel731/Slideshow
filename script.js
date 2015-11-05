@@ -1,29 +1,46 @@
 (function(){
-    function removeMin(src) {
-        return src.substring(0, src.indexOf('Min.jpg')) + '.jpg';
+    function showImg(imgMax) {
+        imgMax.style.opacity = "1";
     }
 
-    function displayImg(imgMin) {
-        var imgMax = document.querySelector('#cadre img');
-            
-        imgMax.src = removeMin(imgMin.src);
-        imgMax.alt = imgMin.alt;
+    function hideImg() {
+        var mainImgs = document.querySelectorAll('.mainPicture'),
+            mainImgsLen = imgs.length;
+        
+        for(var i = 0; i < mainImgsLen; i++) {  
+            mainImgs[i].style.opacity = "0";
+        }
     }
-    
+
+    var displayImg = function(imgMin) {
+        var mainImgs = document.querySelectorAll('.mainPicture'),
+            mainImgsLen = imgs.length;
+        
+        for(var i = 0; i < mainImgsLen; i++) {  
+            if(imgMin.alt === mainImgs[i].alt)
+                showImg(mainImgs[i]);
+            else
+                mainImgs[i].style.opacity = "0";
+         }
+    };
+
     var imgs = document.querySelectorAll('#album img'),
-        imgsLen = imgs.length, i = 0;
+        imgsLen = imgs.length;
 
     setInterval(function() {
-        if(i == imgs.length)
+        if(i == imgsLen)
             i = 0;
        
         displayImg(imgs[i]);
         i++;
     }, 6000);
-
+    
+    hideImg();
+    showImg(document.getElementById('default'));
+    
     for(var i = 0; i < imgsLen; i++) {  
         imgs[i].addEventListener('click', function(e) {
-            displayImg(e.target);
+            displayImg(event.target);
         }, false);
     }
 })();
