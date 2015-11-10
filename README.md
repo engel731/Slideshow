@@ -8,7 +8,7 @@ Attention, la taille maximale et minimale des images doivent être identiques à
 
 Ps: le dépôt présente deux id : "cadre" pour l'image en taille réelle, et "album" pour la forme miniature, un id différent cassera le code.
 
-## Rendue final :
+## Rendu final :
 
 les sources de ce Slideshow peuvent contenir quatre images qui se situent dans l'enceinte même de l'élément cadre.
 Les images changent automatiquement.
